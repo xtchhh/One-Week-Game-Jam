@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class EnemyController : MonoBehaviour
     private GameObject baryonyx;
     private GameObject egg;
     public MeshRenderer rex;
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -21,7 +23,7 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = (baryonyxPos - currentPos).normalized;
         float distance = Vector3.Distance(baryonyxPos, currentPos);
 
-        if (IsActive())
+        if (egg.transform.position.y > 0f)
         {
             rex.enabled = true;
             this.transform.Translate(direction * EnemySpeed * Time.deltaTime);
@@ -32,20 +34,8 @@ public class EnemyController : MonoBehaviour
             if (distance <= 5)
             {
                 Debug.Log($"Game over!!");
+                gameManager.GameOverUI();
             }
-        }
-        Debug.Log(IsActive());
-    }
-
-    private bool IsActive()
-    {
-        if (egg.transform.position.y > 0f)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
 

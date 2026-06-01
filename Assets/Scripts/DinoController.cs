@@ -20,6 +20,11 @@ public class DinoController : MonoBehaviour
         dinoActions.Enable();
     }
 
+    void OnDisable()
+    {
+        dinoActions.Disable();
+    }
+
     void Update()
     {
         Movement();
