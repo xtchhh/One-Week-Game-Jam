@@ -18,13 +18,13 @@ For resource management, I implemented an inventory system around 3 different-so
 
 I initially wanted a `for` loop iterating through the roar list to produce a random roar, but in the interest of time I assigned each roar to its corresponding input directly. Due to time constraints, the logic that would've slowed down the AI when roaring was never implemented.
 
-## Pickup System — Unstable Key
+## Pickup System - Unstable Key
 
 To simulate the player picking up (eating) the egg, I used `Vector3.distance` — a static method that returns the magnitude between two objects. When the distance between the egg and the player falls within a threshold, the egg is deactivated via `SetActive(false)` and its Transform is moved up on the Y axis, scaled by 2.
 
 This Y-axis transform is critical to the AI system. The egg's Y position acts as the trigger that makes the T-Rex go live.
 
-## AI System — Hidden Score
+## AI System - Hidden Score
 
 The T-Rex AI is the hidden score. Rather than a numeric value, the T-Rex's behavior indicates player success and pushes the player into the escape phase.
 
