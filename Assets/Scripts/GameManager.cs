@@ -7,4 +7,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameOverScreen");
     }
+
+    public void SecondGameOverUI()
+    {
+        SceneManager.LoadScene("GameOverScreen2");
+    }
 }

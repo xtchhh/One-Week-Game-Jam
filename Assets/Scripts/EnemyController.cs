@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -33,7 +31,6 @@ public class EnemyController : MonoBehaviour
 
             if (distance <= 5)
             {
-                Debug.Log($"Game over!!");
                 gameManager.GameOverUI();
             }
         }

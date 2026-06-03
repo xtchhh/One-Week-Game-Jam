@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class JPObjective : MonoBehaviour
@@ -5,7 +6,10 @@ public class JPObjective : MonoBehaviour
     private GameObject baryonyx;
     private GameObject egg;
     public float EscapeDistance;
+    private float time;
     public GameManager gameManager;
+    public TMP_Text NoEgg;
+    public TMP_Text Objective;
 
     void Awake()
     {
@@ -15,17 +19,32 @@ public class JPObjective : MonoBehaviour
 
     void Update()
     {
+        time += Time.deltaTime;
+        countTime();
         float distance = Vector3.Distance(baryonyx.transform.position, this.transform.position);
 
         if (distance <= EscapeDistance && egg.transform.position.y > 0)
         {
-            Debug.Log($"You escaped into Jurassic park, Game Over!!");
-            gameManager.GameOverUI();
+            gameManager.SecondGameOverUI();
         }
         else if (distance <= EscapeDistance && egg.transform.position.y == 0)
         {
-            Debug.Log($"You are hungry, you need to find food"); //text
-
+            NoEgg.enabled = true;
+        }
+        else
+        {
+            NoEgg.enabled = false;
+        }
+    }
+    void countTime()
+    {
+        if (time <= 5)
+        {
+            Objective.enabled = true;
+        }
+        else
+        {
+            Objective.enabled = false;
         }
     }
 }
