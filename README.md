@@ -28,13 +28,13 @@ This Y-axis transform is critical to the AI system. The egg's Y position acts as
 
 The T-Rex AI is the hidden score. Rather than a numeric value, the T-Rex's behavior indicates player success and pushes the player into the escape phase.
 
-Once the egg's Y transform is no longer 0, the T-Rex becomes active. Its direction vector is calculated by subtracting the T-Rex's position from the Baryonyx's position and normalizing the result — normalization keeps the direction clean and prevents magnitude from affecting speed. The vector is then scaled by `moveSpeed` (a float) to control speed.
+Once the egg's Y transform is no longer 0, the T-Rex becomes active. Its direction vector is calculated by subtracting the T-Rex's position from the Baryonyx's position and normalizing the result - normalization keeps the direction clean and prevents magnitude from affecting speed. The vector is then scaled by `moveSpeed` (a float) to control speed.
 
 The T-Rex always faces the player using `Quaternion.LookRotation`, however there was an issue: it initially rotated in the completely opposite direction. The fix was multiplying that quaternion by a new `Quaternion.Euler` with a Y value of 90. As a side effect, the AI now moves on a slight curve rather than a perfectly linear path.
 
 ## Win Condition
 
-To escape and win, the player must reach the Jurassic Park gate. The same `Vector3.distance` approach used for the egg pickup is applied here — if the player has the egg and is within a set distance from the gate, the game ends.
+To escape and win, the player must reach the Jurassic Park gate. The same `Vector3.distance` approach used for the egg pickup is applied here - if the player has the egg and is within a set distance from the gate, the game ends.
 
 ## Text & Objectives
 
