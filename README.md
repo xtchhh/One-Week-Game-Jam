@@ -20,7 +20,7 @@ I initially wanted a `for` loop iterating through the roar list to produce a ran
 
 ## Pickup System - Unstable Key
 
-To simulate the player picking up (eating) the egg, I used `Vector3.distance` — a static method that returns the magnitude between two objects. When the distance between the egg and the player falls within a threshold, the egg is deactivated via `SetActive(false)` and its Transform is moved up on the Y axis, scaled by 2.
+To simulate the player picking up (eating) the egg, I used `Vector3.distance` - a static method that returns the magnitude between two objects. When the distance between the egg and the player falls within a threshold, the egg is deactivated via `SetActive(false)` and its Transform is moved up on the Y axis, scaled by 2.
 
 This Y-axis transform is critical to the AI system. The egg's Y position acts as the trigger that makes the T-Rex go live.
 
