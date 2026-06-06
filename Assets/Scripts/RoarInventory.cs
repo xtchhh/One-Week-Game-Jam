@@ -31,7 +31,7 @@ public class RoarInventory : MonoBehaviour
         if (egg.transform.position.y > 0)
         {
             eaten.Play();
-            run.Play();
+            //run.Play();
         }
     }
 }

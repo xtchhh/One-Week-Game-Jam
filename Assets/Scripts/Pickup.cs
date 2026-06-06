@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private GameObject baryonyx;
-
-    void Awake()
-    {
-        baryonyx = GameObject.Find("Baryonyx");
-    }
+    public GameObject baryonyx;
 
     void Update()
     {

@@ -30,13 +30,14 @@ public class DinoController : MonoBehaviour
         Movement();
         Gravity();
         LookAtDirection();
+        Collision();
         //Debug.Log(IsGrounded());
         //Debug.Log($"The baryonyx's position is {transform.position}");
     }
 
     void Gravity()
     {
-        if(!IsGrounded())
+        if (!IsGrounded())
         {
             velocity += -9.81f * Time.deltaTime;
         }
@@ -74,10 +75,35 @@ public class DinoController : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    void Collision()
+    {
+        if (IsCollided())
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 2.5f;
+        }
+    }
+
+    bool IsGrounded()
     {
         if (Physics.Raycast(transform.position + transform.up * 0.25f, -transform.up, 0.3f))
         {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool IsCollided()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, 3f))
+        {
+            Debug.DrawRay(transform.position, transform.forward, Color.orange);
             return true;
         }
         else

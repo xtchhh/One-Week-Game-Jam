@@ -3,16 +3,11 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float EnemySpeed;
-    private GameObject baryonyx;
-    private GameObject egg;
+    public GameObject baryonyx;
+    public GameObject egg;
     public MeshRenderer rex;
     public GameManager gameManager;
-
-    private void Awake()
-    {
-        baryonyx = GameObject.Find("Baryonyx");
-        egg = GameObject.Find("Egg");
-    }
+    public AudioSource stomp;
 
     void Update()
     {
@@ -28,6 +23,8 @@ public class EnemyController : MonoBehaviour
 
             Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
             this.transform.rotation = rotation * Quaternion.Euler(0, 90, 0); //alternates direction??
+
+            stomp.Play();
 
             if (distance <= 5)
             {

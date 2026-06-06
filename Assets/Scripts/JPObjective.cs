@@ -3,19 +3,13 @@ using UnityEngine;
 
 public class JPObjective : MonoBehaviour
 {
-    private GameObject baryonyx;
-    private GameObject egg;
+    public GameObject baryonyx;
+    public GameObject egg;
     public float EscapeDistance;
     private float time;
     public GameManager gameManager;
     public TMP_Text NoEgg;
     public TMP_Text Objective;
-
-    void Awake()
-    {
-        baryonyx = GameObject.Find("Baryonyx");
-        egg = GameObject.Find("Egg");
-    }
 
     void Update()
     {
