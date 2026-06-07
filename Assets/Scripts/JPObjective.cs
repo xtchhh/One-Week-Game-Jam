@@ -21,6 +21,7 @@ public class JPObjective : MonoBehaviour
         {
             gameManager.SecondGameOverUI();
         }
+        /*
         else if (distance <= EscapeDistance && egg.transform.position.y == 0)
         {
             NoEgg.enabled = true;
@@ -29,6 +30,7 @@ public class JPObjective : MonoBehaviour
         {
             NoEgg.enabled = false;
         }
+        */
     }
     void countTime()
     {

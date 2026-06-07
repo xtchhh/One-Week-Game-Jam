@@ -7,7 +7,6 @@ public class RoarInventory : MonoBehaviour
     public AudioSource roar2;
     public AudioSource roar3;
     public AudioSource eaten;
-    public AudioSource run;
     public GameObject egg;
 
     // Update is called once per frame
@@ -31,7 +30,6 @@ public class RoarInventory : MonoBehaviour
         if (egg.transform.position.y > 0)
         {
             eaten.Play();
-            //run.Play();
         }
     }
 }

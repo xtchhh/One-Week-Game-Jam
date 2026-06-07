@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
             this.transform.rotation = rotation * Quaternion.Euler(0, 90, 0); //alternates direction??
 
-            stomp.Play();
+            stomp.enabled = true;
 
             if (distance <= 5)
             {
